@@ -21,7 +21,7 @@ public class SQLInjectionExample {
         String login = args[0];
         String start = "SELECT u FROM";
         //bad query on purpose, just to test the question mark counting logic
-        Query query = entityManager.createQuery(start + "?? User u WHERE u.login = '" + login + "'" );
+        Query query = entityManager.createQuery(start + "?? User u WHERE u.login = '" + login + "'");
         List<User> resultList = query.getResultList();
         System.out.println(resultList);
 
